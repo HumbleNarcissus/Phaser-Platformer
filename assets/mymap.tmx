@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="2017.12.07" orientation="orthogonal" renderorder="right-down" width="10" height="20" tilewidth="16" tileheight="16" infinite="0" nextobjectid="12">
+ <tileset firstgid="1" name="simple" tilewidth="16" tileheight="16" tilecount="4000" columns="50">
+  <image source="../../../Pobrane/simples_pimples.png" width="800" height="1280"/>
+ </tileset>
+ <tileset firstgid="4001" name="simples_pimples" tilewidth="16" tileheight="16" tilecount="4000" columns="50">
+  <image source="../../../Pobrane/simples_pimples.png" width="800" height="1280"/>
+ </tileset>
+ <layer name="Foreground" width="10" height="20">
+  <data encoding="csv">
+201,201,201,201,201,201,201,201,201,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,201,201,201,201,201,201,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,0,0,201,201,201,201,201,
+201,0,0,0,201,201,0,0,0,201,
+201,0,201,201,201,0,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,0,0,201,201,201,0,201,
+201,201,201,201,201,201,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,0,0,201,201,201,201,201,201,201,
+201,0,201,0,0,0,0,0,0,201,
+201,0,0,0,0,0,0,0,0,201,
+201,201,0,0,0,201,0,0,0,201,
+201,201,201,201,201,201,201,201,201,201
+</data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="5" name="player" type="player" gid="77" x="16.3333" y="64" width="16" height="16"/>
+  <object id="6" name="coins" type="coins" gid="2380" x="96" y="112.333" width="16" height="16"/>
+  <object id="7" name="coins" type="coins" gid="2380" x="32" y="144.667" width="16" height="16"/>
+  <object id="8" name="coins" type="coins" gid="2380" x="112" y="176" width="16" height="16"/>
+  <object id="9" name="coins" type="coins" gid="2380" x="64.25" y="240.25" width="16" height="16"/>
+  <object id="10" name="coins" type="coins" gid="2380" x="80" y="288" width="16" height="16"/>
+  <object id="11" name="door" type="door" gid="501" x="128.25" y="304" width="16" height="16"/>
+ </objectgroup>
+</map>
