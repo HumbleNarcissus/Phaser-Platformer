@@ -3,7 +3,7 @@ var loadState = {
     preload: function(){
         this.load.tilemap('mymap', '../assets/mymap.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.image('simpleTiles', 'assets/simples_pimples.png');
-        this.load.spritesheet('player', 'assets/player-run.png', 32, 32, 6);
+        this.load.spritesheet('player', 'assets/player_spritesheet.png', 29, 30, 5);
         this.load.image('door', 'assets/door.png');
         this.load.spritesheet('coins', 'assets/coin.png');
 

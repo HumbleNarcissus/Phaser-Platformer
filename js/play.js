@@ -11,11 +11,10 @@ var playState = {
         this.foreground.resizeWorld();
 
         //player
-        this.sprite = this.game.add.sprite(16, 47, 'player');
-        this.sprite.frame = 0;
-        this.walk = this.sprite.animations.add('walk');
-        this.sprite.play('walk', 10, true);
-        this.sprite.scale.setTo(0.5,1);
+        this.sprite = this.game.add.sprite(23, 47, 'player', 3);
+        this.sprite.anchor.setTo(0.5);
+        this.sprite.animations.add('walk', [0,1,2,1], 6, true);
+        this.sprite.scale.setTo(0.5, 0.5);
         this.game.physics.arcade.enable(this.sprite);
         
 
@@ -34,6 +33,7 @@ var playState = {
         
         //Enable cursor keys so we can create some controls
         this.cursor = this.game.input.keyboard.createCursorKeys();
+        this.jumpButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     },
     collect: function(player, coin){
@@ -50,34 +50,38 @@ var playState = {
 
         if(this.cursor.left.isDown){
             this.sprite.body.velocity.x -= 50;
-            this.sprite.play('walk', 10, true);
+            this.sprite.scale.setTo(0.5 , 0.5);
+            this.sprite.play('walk');
         
         }
         
         else if(this.cursor.right.isDown){
             this.sprite.body.velocity.x = 50;
-            this.sprite.play('walk', 10, true);
+            this.sprite.scale.setTo(-0.5 , 0.5);
+            this.sprite.play('walk');
+        
+        }
+        else {
+            this.sprite.animations.stop();
+            this.sprite.frame = 3;
+           // console.log(this.sprite.body.blocked.down);
+        }
+        
+        if(this.jumpButton.isDown && this.sprite.body.blocked.down){
+            this.sprite.body.velocity.y -= 350;
+            this.sprite.play('walk');
         
         }
         
-        else if(this.cursor.up.isDown){
-            this.sprite.body.velocity.y -= 100;
-            this.sprite.play('walk', 10, true);
-        
-        }
-        
-        else if(this.cursor.down.isDown){
+        if(this.cursor.down.isDown){
             //this.sprite.body.velocity.y = 2;
            // this.sprite.play('walk', 10, true);        
         }
 
-        else {
-            this.sprite.animations.stop();
-        }
         if(this.game.physics.arcade.collide(this.sprite, this.doors)){
             game.state.start('endMenu');
         }
         
     },
-
 };
+
